@@ -27,20 +27,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "contact@nblasr.dev",
-      href: "mailto:contact@nblasr.dev"
+      value: "nnnabilaaasr19@gmail.com",
+      href: "mailto:nnnabilaaasr19@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+62 XXX XXXX XXXX",
-      href: "tel:+62"
+      value: "+62 82189643675",
+      href: "tel:+62 82189643675"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Indonesia",
-      href: "#"
+      value: "Makassar,Indonesia",
+      href: "https://maps.app.goo.gl/ydyXQGGKG41Pd8EXA"
     }
   ];
 

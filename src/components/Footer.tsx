@@ -12,7 +12,8 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl font-bold text-gradient mb-4">nblasr</h3>
               <p className="text-muted-foreground">
-                Software Developer passionate about creating elegant solutions to complex problems.
+                Future Software Engineer & Tech Enthusiast — passionate about learning, 
+                experimenting, and building modern, meaningful software solutions.
               </p>
             </div>
 

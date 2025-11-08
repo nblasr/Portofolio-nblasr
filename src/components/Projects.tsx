@@ -1,29 +1,22 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Project Alpha",
-      description: "A modern web application built with React and TypeScript, featuring real-time data updates and responsive design.",
-      tags: ["React", "TypeScript", "Tailwind CSS"],
-      github: "#",
-      demo: "#"
+      title: "ECommerce-NaFi",
+      description:
+        "A digital e-commerce platform built with C#, HTML, CSS, and JavaScript. Designed to provide a smooth online shopping experience with modern UI and efficient backend logic.",
+      tags: ["C#", "HTML", "CSS", "JavaScript"],
+      github: "https://github.com/nblasr/ECommerce-NaFi"
     },
     {
-      title: "Project Beta",
-      description: "Full-stack application with user authentication, database integration, and RESTful API architecture.",
-      tags: ["Node.js", "React", "PostgreSQL"],
-      github: "#",
-      demo: "#"
-    },
-    {
-      title: "Project Gamma",
-      description: "Innovative solution using modern technologies to solve real-world problems with clean and efficient code.",
-      tags: ["Python", "JavaScript", "API"],
-      github: "#",
-      demo: "#"
+      title: "Portofolio-nblasr",
+      description:
+        "A personal portfolio website built with React, TypeScript, and Tailwind CSS. It showcases my projects, technical skills, and contact information in a clean and modern layout.",
+      tags: ["React", "TypeScript", "Tailwind CSS", "HTML", "CSS"],
+      github: "https://github.com/nblasr/Portofolio-nblasr"
     }
   ];
 
@@ -38,14 +31,14 @@ const Projects = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full" />
             <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
-              Here are some of my recent works that showcase my skills and passion for development
+              Here are some of my recent works that highlight my technical skills, creativity, and passion for software development.
             </p>
           </div>
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
-              <Card 
+              <Card
                 key={idx}
                 className="p-6 bg-card border-border hover:border-primary/50 transition-smooth card-shadow hover:glow-effect group overflow-hidden"
               >
@@ -63,7 +56,7 @@ const Projects = () => {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, index) => (
-                      <span 
+                      <span
                         key={index}
                         className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
                       >
@@ -72,27 +65,21 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
+                  {/* GitHub Button */}
+                  <div className="pt-4">
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 border-primary/30 hover:bg-primary/10 transition-smooth"
+                      className="w-full border-primary/30 hover:bg-primary/10 transition-smooth"
                       asChild
                     >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="flex-1 gradient-primary text-primary-foreground hover:opacity-90 transition-smooth"
-                      asChild
-                    >
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
+                        View Code on GitHub
                       </a>
                     </Button>
                   </div>
@@ -103,15 +90,18 @@ const Projects = () => {
 
           {/* View More */}
           <div className="text-center mt-12">
-            <Button 
+            <Button
               variant="outline"
               size="lg"
               className="border-primary/30 hover:bg-primary/10 transition-smooth"
               asChild
             >
-              <a href="https://github.com/nblasr" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/nblasr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View All Projects on GitHub
-                <ExternalLink className="w-4 h-4 ml-2" />
               </a>
             </Button>
           </div>

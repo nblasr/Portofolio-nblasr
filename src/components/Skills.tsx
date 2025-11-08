@@ -4,15 +4,23 @@ const Skills = () => {
   const skillCategories = [
     {
       category: "Frontend",
-      skills: ["React", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"]
+      skills: ["React", "TypeScript", "Tailwind CSS", "HTML5", "Responsive Design"]
     },
     {
       category: "Backend",
-      skills: ["Node.js", "Python", "RESTful APIs", "Database Design"]
+      skills: ["Node.js", "MySQL", "Database Design"]
     },
     {
       category: "Tools & Others",
-      skills: ["Git", "GitHub", "VS Code", "Agile", "Problem Solving"]
+      skills: ["Git", "GitHub", "VS Code","Visual Studio","Figma", "Agile", "Problem Solving", "Team Collaboration", "Debugging"]
+    },
+    {
+      category: "Programming Languages",
+      skills: ["C#", "Java", "PHP", "JavaScript", "TypeScript", "HTML", "CSS"]
+    },
+    {
+      category: "Learning & Interests",
+      skills: ["Cybersecurity Basics","Deep Learning Fundamentals", "API Security", "System Design Basics"]
     }
   ];
 
@@ -41,13 +49,13 @@ const Skills = () => {
                 <h3 className="text-2xl font-semibold text-primary mb-6">{category.category}</h3>
                 <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill, index) => (
-                    <Badge 
+                    <div
                       key={index}
                       variant="secondary"
                       className="px-4 py-2 text-sm bg-primary/10 text-foreground border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
                     >
                       {skill}
-                    </Badge>
+                    </div>
                   ))}
                 </div>
               </div>

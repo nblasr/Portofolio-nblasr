@@ -6,7 +6,7 @@ const About = () => {
     {
       icon: Code2,
       title: "Clean Code",
-      description: "Writing maintainable, scalable."
+      description: "Writing maintainable, scalable, and efficient code."
     },
     {
       icon: Rocket,
@@ -16,7 +16,7 @@ const About = () => {
     {
       icon: Users,
       title: "Collaboration",
-      description: "Team player with strong communication skills"
+      description: "Team player with strong communication skills."
     }
   ];
 

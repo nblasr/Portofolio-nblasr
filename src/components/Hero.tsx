@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "../assets/hero-bg.jpg";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -31,15 +31,16 @@ const Hero = () => {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Hi, I'm <span className="text-gradient">nblasr</span>
+            Hi there! I'm <span className="text-gradient">Nabila</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Software Developer & Tech Enthusiast
+            Future Software Engineer & Tech Enthusiast
           </p>
 
           <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
+            I enjoy learning, experimenting, and creating things that make people’s lives easier.
             Passionate about creating elegant solutions to complex problems. 
             Specialized in building modern web applications and innovative software solutions.
           </p>
@@ -84,7 +85,7 @@ const Hero = () => {
               <Linkedin className="w-6 h-6" />
             </a>
             <a 
-              href="mailto:contact@nblasr.dev"
+              href="mailto:nnnabilaaasr19@gmail.com"
               className="p-3 rounded-full bg-card hover:bg-primary/20 transition-smooth border border-border hover:border-primary/50 glow-effect hover:scale-110"
               aria-label="Email Contact"
             >
