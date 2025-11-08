@@ -39,9 +39,9 @@ const Skills = () => {
             </p>
           </div>
 
-          {/* Skills Grid - First 3 categories */}
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            {skillCategories.slice(0, 3).map((category, idx) => (
+          {/* Skills Grid - First 2 categories (Frontend & Backend) */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8 max-w-4xl mx-auto">
+            {skillCategories.slice(0, 2).map((category, idx) => (
               <div 
                 key={idx}
                 className="space-y-4 p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-smooth card-shadow hover:glow-effect"
@@ -62,9 +62,9 @@ const Skills = () => {
             ))}
           </div>
 
-          {/* Skills Grid - Last 2 categories centered */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {skillCategories.slice(3).map((category, idx) => (
+          {/* Skills Grid - Last 3 categories */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {skillCategories.slice(2).map((category, idx) => (
               <div 
                 key={idx}
                 className="space-y-4 p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-smooth card-shadow hover:glow-effect"
