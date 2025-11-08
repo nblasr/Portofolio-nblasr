@@ -39,9 +39,9 @@ const Skills = () => {
             </p>
           </div>
 
-          {/* Skills Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {skillCategories.map((category, idx) => (
+          {/* Skills Grid - First 3 categories */}
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {skillCategories.slice(0, 3).map((category, idx) => (
               <div 
                 key={idx}
                 className="space-y-4 p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-smooth card-shadow hover:glow-effect"
@@ -49,13 +49,36 @@ const Skills = () => {
                 <h3 className="text-2xl font-semibold text-primary mb-6">{category.category}</h3>
                 <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill, index) => (
-                    <div
+                    <Badge
                       key={index}
                       variant="secondary"
                       className="px-4 py-2 text-sm bg-primary/10 text-foreground border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
                     >
                       {skill}
-                    </div>
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Skills Grid - Last 2 categories centered */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {skillCategories.slice(3).map((category, idx) => (
+              <div 
+                key={idx}
+                className="space-y-4 p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-smooth card-shadow hover:glow-effect"
+              >
+                <h3 className="text-2xl font-semibold text-primary mb-6">{category.category}</h3>
+                <div className="flex flex-wrap gap-3">
+                  {category.skills.map((skill, index) => (
+                    <Badge
+                      key={index}
+                      variant="secondary"
+                      className="px-4 py-2 text-sm bg-primary/10 text-foreground border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
+                    >
+                      {skill}
+                    </Badge>
                   ))}
                 </div>
               </div>
