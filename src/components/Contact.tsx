@@ -1,27 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
-  };
 
   const contactInfo = [
     {
@@ -59,103 +39,45 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card className="p-8 bg-card border-border card-shadow">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    required
-                    className="bg-background border-border focus:border-primary transition-smooth"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    required
-                    className="bg-background border-border focus:border-primary transition-smooth"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Your message..."
-                    rows={6}
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    required
-                    className="bg-background border-border focus:border-primary transition-smooth resize-none"
-                  />
-                </div>
-                <Button 
-                  type="submit"
-                  className="w-full gradient-primary text-primary-foreground font-semibold hover:opacity-90 transition-smooth glow-effect"
+          {/* Contact Info */}
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+            {contactInfo.map((info, idx) => (
+              <Card 
+                key={idx}
+                className="p-6 bg-card border-border hover:border-primary/50 transition-smooth card-shadow hover:glow-effect group"
+              >
+                <a 
+                  href={info.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center text-center gap-4"
                 >
-                  Send Message
-                </Button>
-              </form>
-            </Card>
-
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-                {contactInfo.map((info, idx) => (
-                  <Card 
-                    key={idx}
-                    className="p-6 bg-card border-border hover:border-primary/50 transition-smooth card-shadow hover:glow-effect group"
-                  >
-                    <a 
-                      href={info.href}
-                      className="flex items-start gap-4"
-                    >
-                      <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
-                        <info.icon className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">{info.title}</h4>
-                        <p className="text-muted-foreground">{info.value}</p>
-                      </div>
-                    </a>
-                  </Card>
-                ))}
-              </div>
-
-              <Card className="p-8 bg-gradient-primary text-primary-foreground card-shadow glow-effect">
-                <h3 className="text-2xl font-bold mb-4">Let's Work Together</h3>
-                <p className="mb-6 opacity-90">
-                  I'm always interested in hearing about new projects and opportunities. 
-                  Whether you have a question or just want to say hi, feel free to reach out!
-                </p>
-                <Button 
-                  variant="outline"
-                  className="border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-smooth"
-                  asChild
-                >
-                  <a href="https://www.linkedin.com/in/nblasr/" target="_blank" rel="noopener noreferrer">
-                    Connect on LinkedIn
-                  </a>
-                </Button>
+                  <div className="p-4 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+                    <info.icon className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">{info.title}</h4>
+                    <p className="text-muted-foreground text-sm">{info.value}</p>
+                  </div>
+                </a>
               </Card>
-            </div>
+            ))}
+          </div>
+
+          {/* Map */}
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden border-border card-shadow">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.65747143927!2d119.24309754999999!3d-5.1477463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee329d96c4671%3A0x3030bfbcaf770b0!2sMakassar%2C%20Makassar%20City%2C%20South%20Sulawesi!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Makassar Location"
+              />
+            </Card>
           </div>
         </div>
       </div>
